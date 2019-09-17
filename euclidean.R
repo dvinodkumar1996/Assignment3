@@ -1,0 +1,26 @@
+euclidean<-function(m,n)
+{
+  if(m>n)
+  {
+    minn<-n
+    maxx<-m
+  }
+  else
+  {
+    minn<-m
+    maxx<-n
+  }
+ while(TRUE)
+ {
+   if(maxx%%minn==0)
+     return(minn)
+   else
+   {
+     temp<-maxx
+     maxx<-minn
+     minn<-temp%%minn
+   }
+ }
+}
+
+euclidean(23,27)
