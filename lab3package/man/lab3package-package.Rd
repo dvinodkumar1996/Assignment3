@@ -1,12 +1,12 @@
-\name{lab3package-package}
-\alias{lab3package-package}
+\name{lab3package}
+\alias{assignment3package}
 \alias{lab3package}
 \docType{package}
 \title{
-\packageTitle{lab3package}
+\packageTitle{Eucledian}
 }
 \description{
-\packageDescription{lab3package}
+\packageDescription{Computes the greatest common divisor of two given integers}
 }
 \details{
 
