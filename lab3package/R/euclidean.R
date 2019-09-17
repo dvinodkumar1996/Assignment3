@@ -1,3 +1,9 @@
+#' @author Vinod kumar Dasari
+#' @param It takes m,n as two integer numbers.
+#' @return It returns the greatest common divisor as integer.
+#' @references https://en.wikipedia.org/wiki/Euclidean algorithm
+#' @example euclidean(100,1000)
+
 euclidean<-function(m,n)
 {
   if(m>n)
