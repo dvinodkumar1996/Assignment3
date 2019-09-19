@@ -22,5 +22,5 @@ euclidean(100,1000)
 https://en.wikipedia.org/wiki/Euclidean algorithm
 }
 \author{
-Vinod kumar Dasari
+Vinod kumar Dasari and Gowtham Kukkemane Mahalingabhat
 }

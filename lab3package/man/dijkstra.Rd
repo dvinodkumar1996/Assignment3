@@ -4,10 +4,10 @@
 \alias{dijkstra}
 \title{Finds the shortest path from initial node to every other node in the graph using Dijkstra's Algorithm.}
 \usage{
-dijkstra(graph, init_node)
+dijkstra(graph, source_node)
 }
 \arguments{
-\item{graph, init_node}{Takes in two arguments, the first one is a dataframe passed to graph argument and second one is the starting node to find the shortest distance from.}
+\item{graph, source_node}{Takes in two arguments, the first one is a dataframe passed to graph argument and second one is the starting node to find the shortest minimal_pathance from.}
 }
 \value{
 Returns the shortest path to all the other nodes available from the initial node.
@@ -23,4 +23,10 @@ w=c(7,9,14,7,10,15,9,10,11,2,15,11,6,6,9,14,2,9))
 dijkstra(wiki_graph,3)
 dijkstra(wiki_graph,1)
 }
+}
+\references{
+https://en.wikipedia.org/wiki/Dijkstra%27s algorithm
+}
+\author{
+Vinod kumar Dasari and Gowtham Kukkemane Mahalingabhat
 }

@@ -1,5 +1,7 @@
 #' Finds the shortest path from initial node to every other node in the graph using Dijkstra's Algorithm.
-#' @param graph,init_node Takes in two arguments, the first one is a dataframe passed to graph argument and second one is the starting node to find the shortest distance from.
+#' @param graph,source_node Takes in two arguments, the first one is a dataframe passed to graph argument and second one is the starting node to find the shortest minimal_pathance from.
+#' @author Vinod kumar Dasari and Gowtham Kukkemane Mahalingabhat
+#' @references https://en.wikipedia.org/wiki/Dijkstra%27s algorithm
 #' @examples
 #' \dontrun{ 
 #' wiki_graph <-data.frame(v1=c(1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,6,6,6),
@@ -14,24 +16,22 @@
 
 
 
-dijkstra <- function(graph,init_node){
-  if(is.data.frame(graph) && is.numeric(init_node) 
-    && which(graph[,"v1"] == init_node) && which(graph[,"v2"] == init_node)) {
+dijkstra <- function(graph,source_node){
+  if(is.data.frame(graph) && is.numeric(source_node) 
+    && which(graph[,"v1"] == source_node) && which(graph[,"v2"] == source_node)) {
     
-    # creating node set
+
     nodes <- union(graph[,"v1"],graph[,"v2"])
-    dist <- rep(Inf,length(nodes))
+    minimal_path <- rep(Inf,length(nodes))
     prev <- rep(FALSE,length(nodes))
     
-    dist[which(nodes == init_node)] <- 0
+    minimal_path[which(nodes == source_node)] <- 0
     
     i <- 1
     while(length(nodes) != 0){
       
-      #node with minimun distance
-      x <- which(dist == min(dist[nodes]))
+      x <- which(minimal_path == min(minimal_path[nodes]))
       
-      #remove u from node
       nodes <- nodes[-which(nodes == x)]
       
       for(y in nodes){
@@ -40,9 +40,9 @@ dijkstra <- function(graph,init_node){
         
         if(any(next_nodes[,"v2"] == y)){
           
-          alt <- dist[x] + next_nodes[which(next_nodes[,"v2"]==y ), "w" ]
-          if(alt < dist[y]){
-            dist[y] <- alt
+          alt <- minimal_path[x] + next_nodes[which(next_nodes[,"v2"]==y ), "w" ]
+          if(alt < minimal_path[y]){
+            minimal_path[y] <- alt
             prev[y] <- x
           }
           
@@ -52,10 +52,10 @@ dijkstra <- function(graph,init_node){
       i <- i + 1
       
     }
-    return(dist)
+    return(minimal_path)
     
   } 
   else{
-    stop("Invalid inputs entered")
+    stop("Given arguments are invalid")
   }
 }
