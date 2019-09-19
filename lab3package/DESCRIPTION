@@ -6,5 +6,5 @@ Date: 2019-09-17
 Author: Vinod Kumar Dasari
 Maintainer: Vinod kumar <dvinodkumar1996@gmail.com>
 Description: This package contains two functions.   Euclidean- which computes the greatest common divisior of the given two integers. Dijkstras- which computes all the shortes paths from a given source node of graph.
-License: MIT
+License: MIT + file LICENSE
 RoxygenNote: 6.1.1
