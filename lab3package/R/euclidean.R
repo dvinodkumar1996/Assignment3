@@ -1,8 +1,11 @@
+#' @title Finds the greatest common divisor.
 #' @author Vinod kumar Dasari
-#' @param It takes m,n as two integer numbers.
+#' @param m,n It takes m,n as two integer numbers.
 #' @return It returns the greatest common divisor as integer.
 #' @references https://en.wikipedia.org/wiki/Euclidean algorithm
-#' @example euclidean(100,1000)
+#' @examples 
+#' euclidean(100,1000)
+#' @export
 
 euclidean<-function(m,n)
 {
@@ -19,7 +22,7 @@ euclidean<-function(m,n)
  while(TRUE)
  {
    if(maxx%%minn==0)
-     return(minn)
+     return(abs(minn))
    else
    {
      temp<-maxx
